@@ -24,18 +24,19 @@
             <div class="row">
                 @foreach($debaters as $debater)
 
+                    @if(!empty($debater->photo))
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             @if($debater->photo)
-                                <a href="/debater/{{ $debater->id }}">
-                                    <img class="card-img-top"
+                                <a href="/debater/{{ $debater->id }}" class="photo-link">
+                                    <img class="list-photo"
                                          src="{{ \Storage::url($debater->photo) }}"
                                          alt="{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}">
                                 </a>
                             @endif
                             <div class="card-body">
                                 <h4 class="card-title">{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}</h4>
-                                <p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>
+                                {{--<p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>--}}
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a href="/debater/{{ $debater->id }}"
@@ -45,6 +46,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
 
                 @endforeach
 

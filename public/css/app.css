@@ -45,4 +45,12 @@ footer p {
 
 .box-shadow { -webkit-box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
+.photo-link {
+  overflow: hidden;
+  max-height: 350px;
+}
+.list-photo {
+  max-width: 100%;
+}
+
 

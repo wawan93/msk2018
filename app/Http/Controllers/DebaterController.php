@@ -14,7 +14,7 @@ class DebaterController extends Controller
      */
     public function index()
     {
-        $debaters = Debater::all();
+        $debaters = Debater::orderBy("last_name")->get();
         return view("debaters/list", compact('debaters'));
     }
 
