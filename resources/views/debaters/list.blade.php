@@ -47,3 +47,11 @@
         </div>
     </div>
 @endsection
+
+@section("styles")
+    <style>
+        .jumbotron .container {
+            max-width: 40rem;
+        }
+    </style>
+@endsection

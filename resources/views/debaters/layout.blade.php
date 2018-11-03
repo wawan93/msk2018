@@ -11,6 +11,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/app.css" rel="stylesheet">
+    @yield("styles")
 </head>
 
 <body>
@@ -58,5 +59,6 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="/js/app.js"></script>
+@yield("scripts")
 </body>
 </html>
