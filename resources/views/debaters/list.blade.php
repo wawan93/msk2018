@@ -31,7 +31,7 @@
                                  alt="{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}">
                             <div class="card-body">
                                 <h4 class="card-title">{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}</h4>
-                                <p class="card-text">{{ substr($debater->about, 0, 200) }}</p>
+                                <p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a href="/debater/{{ $debater->id }}" type="button" class="btn btn-sm btn-outline-secondary">Программа</a>
