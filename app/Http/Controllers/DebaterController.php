@@ -14,7 +14,7 @@ class DebaterController extends Controller
      */
     public function index()
     {
-        return view("debaters/index");
+        return view("debaters/list");
     }
 
     /**
