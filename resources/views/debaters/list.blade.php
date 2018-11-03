@@ -9,10 +9,10 @@
             <p class="lead text-muted">
                 Мы приглашаем вас стать участниками Дебатного турнира, в ходе которого будут высказаны и услышаны самые
                 разные точки зрения о будущем Московского отделения </p>
-            {{--<p>--}}
-            {{--<a href="#" class="btn btn-primary my-2">Стать участником</a>--}}
-            {{--<a href="#" class="btn btn-secondary my-2">Посмотреть участников</a>--}}
-            {{--</p>--}}
+            <p>
+                <a href="#" class="btn btn-primary my-2">Смотреть трансляцию</a>
+                <a href="#" class="btn btn-secondary my-2">Расписание</a>
+            </p>
         </div>
     </section>
 @endsection
@@ -38,7 +38,8 @@
                                 <p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="/debater/{{ $debater->id }}" class="btn btn-sm btn-primary btn-outline-secondary">Программа</a>
+                                        <a href="/debater/{{ $debater->id }}"
+                                           class="btn btn-sm btn-primary btn-outline-secondary">Программа</a>
                                     </div>
                                 </div>
                             </div>

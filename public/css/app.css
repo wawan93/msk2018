@@ -22,6 +22,10 @@
   }
 }
 
+img.photo {
+  max-width: 100%;
+}
+
 .jumbotron p:last-child {
   margin-bottom: 0;
 }

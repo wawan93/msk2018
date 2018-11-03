@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-4">
                     @if($debater->photo)
-                        <img src="{{ \Storage::url($debater->photo) }}" height="300">
+                        <img class="photo" src="{{ \Storage::url($debater->photo) }}">
                     @endif
                 </div>
                 <div class="col-md-8">
