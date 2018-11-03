@@ -14,7 +14,8 @@ class DebaterController extends Controller
      */
     public function index()
     {
-        return view("debaters/list");
+        $debaters = Debater::all();
+        return view("debaters/list", compact('debaters'));
     }
 
     /**
