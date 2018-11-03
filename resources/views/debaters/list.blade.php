@@ -20,11 +20,11 @@
 @section("content")
     <div class="album py-5 bg-light">
         <div class="container">
-
+            <h2>Зарегистрированные участники дебатов</h2>
+            <hr>
             <div class="row">
                 @foreach($debaters as $debater)
 
-                    @if(!empty($debater->photo))
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             @if($debater->photo)
@@ -46,7 +46,6 @@
                             </div>
                         </div>
                     </div>
-                    @endif
 
                 @endforeach
 
