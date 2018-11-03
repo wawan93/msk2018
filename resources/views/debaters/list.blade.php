@@ -9,10 +9,10 @@
             <p class="lead text-muted">
                 Мы приглашаем вас стать участниками Дебатного турнира, в ходе которого будут высказаны и услышаны самые
                 разные точки зрения о будущем Московского отделения </p>
-            <p>
-                <a href="#" class="btn btn-primary my-2">Стать участником</a>
-                <a href="#" class="btn btn-secondary my-2">Посмотреть участников</a>
-            </p>
+            {{--<p>--}}
+            {{--<a href="#" class="btn btn-primary my-2">Стать участником</a>--}}
+            {{--<a href="#" class="btn btn-secondary my-2">Посмотреть участников</a>--}}
+            {{--</p>--}}
         </div>
     </section>
 @endsection
@@ -26,9 +26,13 @@
 
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                 src="{{ $debater->photo }}"
-                                 alt="{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}">
+                            @if($debater->photo)
+                                <a href="/debater/{{ $debater->id }}">
+                                    <img class="card-img-top"
+                                         src="{{ \Storage::url($debater->photo) }}"
+                                         alt="{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}">
+                                </a>
+                            @endif
                             <div class="card-body">
                                 <h4 class="card-title">{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}</h4>
                                 <p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>

@@ -33,7 +33,7 @@
     </div>
     <div class="navbar navbar-dark bg-white box-shadow">
         <div class="container d-flex justify-content-between">
-            <a href="#" class="navbar-brand d-flex align-items-center">
+            <a href="/" class="navbar-brand d-flex align-items-center">
                 <img src="/yabloko_logo.png" height="50">
             </a>
         </div>

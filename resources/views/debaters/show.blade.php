@@ -7,27 +7,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="{{ $debater->photo }}" height="300">
+                    @if($debater->photo)
+                        <img src="{{ \Storage::url($debater->photo) }}" height="300">
+                    @endif
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <h1>{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}</h1>
-                    <p>
-                        {{ $debater->about }}
-                    </p>
+                    <p>{!! nl2br($debater->about) !!}</p>
+                    <h2>Программа</h2>
+                    <p>{!! nl2br($debater->program) !!}</p>
                 </div>
             </div>
         </div>
     </section>
-
-@endsection
-
-@section("content")
-    <div class="album py-5 bg-light">
-        <div class="container">
-            <div class="col-xs-12">
-                <h2>Программа</h2>
-                {{ $debater->program }}
-            </div>
-        </div>
-    </div>
 @endsection
