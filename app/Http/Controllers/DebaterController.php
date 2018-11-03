@@ -47,7 +47,7 @@ class DebaterController extends Controller
      */
     public function show(Debater $debater)
     {
-        //
+        return view("debaters.show", compact("debater"));
     }
 
     /**

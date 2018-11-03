@@ -12,3 +12,4 @@
 */
 
 Route::get('/', "DebaterController@index");
+Route::get('/debater/{debater}', "DebaterController@show");
