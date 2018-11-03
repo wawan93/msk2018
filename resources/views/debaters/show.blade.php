@@ -14,7 +14,9 @@
                 <div class="col-md-8">
                     <h1>{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}</h1>
                     <p>{!! nl2br($debater->about) !!}</p>
-                    <h2>Программа</h2>
+                    <h5>
+                        <b>Какая главная задача сейчас стоит перед Московским Яблоком?</b>
+                    </h5>
                     <p>{!! nl2br($debater->program) !!}</p>
                 </div>
             </div>
