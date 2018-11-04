@@ -48,10 +48,13 @@
 <footer class="text-muted">
     <div class="container">
         <p class="float-right">
-            <a href="#">Back to top</a>
+            <a href="#">наверх</a>
         </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+        <p>
+            © 2018 |
+            <a href="/info/organizators">Оргкомитет дебатов</a> |
+            <a href="/info/reglament">Регламент</a>
+        </p>
     </div>
 </footer>
 

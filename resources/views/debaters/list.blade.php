@@ -24,7 +24,6 @@
             <hr>
             <div class="row">
                 @foreach($debaters as $debater)
-
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             @if($debater->photo)
@@ -35,7 +34,7 @@
                                 </a>
                             @endif
                             <div class="card-body">
-                                <h4 class="card-title">{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}</h4>
+                                <h4 class="card-title"><a href="/debater/{{ $debater->id }}">{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}</a></h4>
                                 {{--<p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>--}}
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
