@@ -20,7 +20,7 @@
 @section("content")
     <div class="album py-5 bg-light">
         <div class="container">
-            @if($days)
+            @if($days->isNotEmpty())
                 <h2>Сегодня дебатируют</h2>
                 <hr>
                 @foreach($days as $day)

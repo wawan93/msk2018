@@ -17,8 +17,7 @@ class DebaterController extends Controller
     public function index()
     {
         $debaters = Debater::orderBy("last_name")->get()->keyBy("id");
-        $format = Carbon::now()->format("Y-m-d");
-        $days = Day::query()->where("day", $format)->get();
+        $days = Day::query()->where("day", Carbon::now()->format("Y-m-d"))->get();
 
         return view("debaters/list", compact('debaters', 'days'));
     }
