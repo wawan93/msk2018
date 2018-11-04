@@ -12,8 +12,5 @@
 */
 
 Route::get('/', "DebaterController@index");
+Route::get('/timetable', "DebaterController@timetable");
 Route::get('/debater/{debater}', "DebaterController@show");
-Route::get("no-photo", function () {
-    $debaters = \App\Debater::where("photo", "")->get();
-    return view("debaters.list", compact("debaters"));
-});

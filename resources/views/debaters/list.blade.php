@@ -10,7 +10,7 @@
                 Мы приглашаем вас стать участниками Дебатного турнира, в ходе которого будут высказаны и услышаны самые
                 разные точки зрения о будущем Московского отделения </p>
             <p>
-                <a href="https://docs.google.com/spreadsheets/d/1_Qy_yOBC4k4iOx16wwMocgKw61rVLefym8igOM6o1cs/edit?usp=sharing" class="btn btn-primary my-2">Расписание дебатов</a>
+                <a href="/timetable" class="btn btn-primary my-2">Расписание дебатов</a>
                 {{--<a href="#" class="btn btn-secondary my-2">Расписание</a>--}}
             </p>
         </div>
