@@ -24,8 +24,8 @@
             <hr>
             <div class="row">
                 @foreach($debaters as $debater)
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
+                    <div class="col-md-3">
+                        <div class="card mb-3 box-shadow">
                             @if($debater->photo)
                                 <a href="/debater/{{ $debater->id }}" class="photo-link">
                                     <img class="list-photo"
