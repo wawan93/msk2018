@@ -12,12 +12,12 @@ class Day extends Model
         return $this->hasOne(Debater::class, "id", "debater1");
     }
     public function debater2() {
-        return $this->hasOne(Debater::class, "id", "debater1");
+        return $this->hasOne(Debater::class, "id", "debater2");
     }
     public function debater3() {
-        return $this->hasOne(Debater::class, "id", "debater1");
+        return $this->hasOne(Debater::class, "id", "debater3");
     }
     public function debater4() {
-        return $this->hasOne(Debater::class, "id", "debater1");
+        return $this->hasOne(Debater::class, "id", "debater4");
     }
 }

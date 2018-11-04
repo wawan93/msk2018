@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Day;
 use App\Debater;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DebaterController extends Controller
@@ -14,8 +16,11 @@ class DebaterController extends Controller
      */
     public function index()
     {
-        $debaters = Debater::orderBy("last_name")->get();
-        return view("debaters/list", compact('debaters'));
+        $debaters = Debater::orderBy("last_name")->get()->keyBy("id");
+        $format = Carbon::now()->addHours(5)->format("Y-m-d");
+        $days = Day::query()->where("day", $format)->get();
+
+        return view("debaters/list", compact('debaters', 'days'));
     }
 
     /**

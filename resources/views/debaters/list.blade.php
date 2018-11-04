@@ -20,7 +20,42 @@
 @section("content")
     <div class="album py-5 bg-light">
         <div class="container">
-            <h2>Зарегистрированные участники дебатов</h2>
+            <h2>Сегодня дебатируют</h2>
+            <hr>
+            @foreach($days as $day)
+                <div class="row">
+                    @for($i = 1; $i <= 4; $i++)
+                        @if($day["debater{$i}"] != null)
+                            @php
+                                $debater = $debaters[$day["debater{$i}"]]
+                            @endphp
+                            <div class="col-md-3">
+                                <div class="card mb-3 box-shadow">
+                                    @if($debater->photo)
+                                        <a href="/debater/{{ $debater->id }}" class="photo-link">
+                                            <img class="list-photo"
+                                                 src="{{ \Storage::url($debater->photo) }}"
+                                                 alt="{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}">
+                                        </a>
+                                    @endif
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="/debater/{{ $debater->id }}">{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}</a></h4>
+                                        {{--<p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>--}}
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <a href="/debater/{{ $debater->id }}"
+                                                   class="btn btn-sm btn-primary btn-outline-secondary">Программа</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        @endif
+                    @endfor
+                </div>
+            @endforeach
+            <h2>Все участники дебатов</h2>
             <hr>
             <div class="row">
                 @foreach($debaters as $debater)
