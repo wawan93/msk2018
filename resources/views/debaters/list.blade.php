@@ -49,7 +49,7 @@
                                         @endif
                                         <div class="card-body">
                                             <h4 class="card-title"><a
-                                                        href="/debater/{{ $debater->id }}">{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}</a>
+                                                        href="/debater/{{ $debater->id }}">{{ $debater->last_name }}<br> {{ $debater->first_name }}<br> {{ $debater->middle_name }}</a>
                                             </h4>
                                             {{--<p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>--}}
                                             <div class="d-flex justify-content-between align-items-center">
