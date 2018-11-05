@@ -21,7 +21,7 @@
                 @endphp
                 <div class="row">
                     <div class="col-md-12 py-5">
-                        <h2>{{$date->day}} {{ $date->localeMonth }}, {{ $day->group }} группа</h2>
+                        <h2>{{$date->day}} {{ $date->localeMonth }}, {{ $day->group == 1 ? "19:00" : "20:30" }}</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -46,7 +46,7 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
                                                 <a href="/debater/{{ $debater->id }}"
-                                                   class="btn btn-sm btn-primary btn-outline-secondary">Программа</a>
+                                                   class="btn btn-sm btn-primary btn-outline-secondary">Подробнее</a>
                                             </div>
                                         </div>
                                     </div>

@@ -47,7 +47,7 @@
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
                                                     <a href="/debater/{{ $debater->id }}"
-                                                       class="btn btn-sm btn-primary btn-outline-secondary">Программа</a>
+                                                       class="btn btn-sm btn-primary btn-outline-secondary">Подробнее</a>
                                                 </div>
                                             </div>
                                         </div>
