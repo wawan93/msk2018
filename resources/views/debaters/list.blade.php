@@ -15,10 +15,11 @@
                 <p>
                     <a href="https://goo.gl/forms/6GYe0XJTv1FJId973" class="btn btn-primary btn-outline-primary my-2">Голосовать</a>
                     <a href="/timetable" class="btn btn-secondary my-2">Расписание</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_QVGyv3CmMiCmyvTYTMreoqZJcEThLtJ_jPLXkCM-KP3BaQ/viewform" class="btn btn-secondary my-2">Вопрос участникам</a>
                 </p>
                 </div>
                 <div class="col-md-6">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/d_TPPu0PJhM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/d_TPPu0PJhM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
