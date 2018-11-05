@@ -13,8 +13,8 @@
                     самые
                     разные точки зрения о будущем Московского отделения </p>
                 <p>
-                    <a href="/timetable" class="btn btn-primary btn-outline-primary my-2">Расписание дебатов</a>
-                    {{--<a href="#" class="btn btn-secondary my-2">Расписание</a>--}}
+                    <a href="https://goo.gl/forms/6GYe0XJTv1FJId973" class="btn btn-primary btn-outline-primary my-2">Голосовать</a>
+                    <a href="/timetable" class="btn btn-secondary my-2">Расписание</a>
                 </p>
                 </div>
                 <div class="col-md-6">
