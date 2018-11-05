@@ -3,16 +3,24 @@
 @section('title', 'Дебатный турнир')
 
 @section("jumbotron")
-    <section class="jumbotron text-center">
+    <section class="jumbotron">
         <div class="container">
-            <h1 class="jumbotron-heading">Дебатный турнир</h1>
-            <p class="lead text-muted">
-                Мы приглашаем вас стать участниками Дебатного турнира, в ходе которого будут высказаны и услышаны самые
-                разные точки зрения о будущем Московского отделения </p>
-            <p>
-                <a href="/timetable" class="btn btn-primary my-2">Расписание дебатов</a>
-                {{--<a href="#" class="btn btn-secondary my-2">Расписание</a>--}}
-            </p>
+            <div class="row">
+                <div class="col-md-6">
+                <h1 class="jumbotron-heading">Дебатный турнир</h1>
+                <p class="lead text-muted">
+                    Мы приглашаем вас стать участниками Дебатного турнира, в ходе которого будут высказаны и услышаны
+                    самые
+                    разные точки зрения о будущем Московского отделения </p>
+                <p>
+                    <a href="/timetable" class="btn btn-primary btn-outline-primary my-2">Расписание дебатов</a>
+                    {{--<a href="#" class="btn btn-secondary my-2">Расписание</a>--}}
+                </p>
+                </div>
+                <div class="col-md-6">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/d_TPPu0PJhM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
@@ -93,9 +101,9 @@
 @endsection
 
 @section("styles")
-    <style>
-        .jumbotron .container {
-            max-width: 40rem;
-        }
-    </style>
+    {{--<style>--}}
+        {{--.jumbotron .container {--}}
+            {{--max-width: 40rem;--}}
+        {{--}--}}
+    {{--</style>--}}
 @endsection
