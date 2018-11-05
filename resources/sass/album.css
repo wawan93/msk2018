@@ -40,7 +40,7 @@ footer p {
 
 .photo-link {
   overflow: hidden;
-  max-height: 250px;
+  max-height: 30rem;
 }
 .list-photo {
   max-width: 100%;
