@@ -67,8 +67,10 @@
                     </div>
                 @endforeach
             @endif
+            <div class="row py-5">
             <h2>Все участники дебатов</h2>
             <hr>
+            </div>
             <div class="row">
                 @foreach($debaters as $debater)
                     <div class="col-md-3">
@@ -81,12 +83,12 @@
                                 </a>
                             @endif
                             <div class="card-body">
-                                <h4 class="card-title"><a href="/debater/{{ $debater->id }}">{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}</a></h4>
+                                <h4 class="card-title"><a href="/debater/{{ $debater->id }}">{{ $debater->last_name }}<br>  {{ $debater->first_name }}<br>  {{ $debater->middle_name }}</a></h4>
                                 {{--<p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>--}}
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a href="/debater/{{ $debater->id }}"
-                                           class="btn btn-sm btn-primary btn-outline-secondary">Программа</a>
+                                           class="btn btn-sm btn-primary btn-outline-secondary">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
