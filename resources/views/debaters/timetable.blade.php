@@ -31,7 +31,7 @@
                                 $debater = $debaters[$day["debater{$i}"]]
                             @endphp
                             <div class="col-md-3">
-                                <div class="card mb-3 box-shadow">
+                                <div class="card mb-3 box-shadow @if($day->winner == $debater->id) alert-success @endif">
                                     @if($debater->photo)
                                         <a href="/debater/{{ $debater->id }}" class="photo-link">
                                             <img class="list-photo"

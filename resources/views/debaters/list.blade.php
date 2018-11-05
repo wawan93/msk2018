@@ -7,19 +7,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                <h1 class="jumbotron-heading">Дебатный турнир</h1>
-                <p class="lead text-muted">
-                    Мы приглашаем вас стать участниками Дебатного турнира, в ходе которого будут высказаны и услышаны
-                    самые
-                    разные точки зрения о будущем Московского отделения </p>
-                <p>
-                    <a href="https://goo.gl/forms/6GYe0XJTv1FJId973" class="btn btn-primary btn-outline-primary my-2">Голосовать</a>
-                    <a href="/timetable" class="btn btn-secondary my-2">Расписание</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_QVGyv3CmMiCmyvTYTMreoqZJcEThLtJ_jPLXkCM-KP3BaQ/viewform" class="btn btn-secondary my-2">Вопрос участникам</a>
-                </p>
+                    <h1 class="jumbotron-heading">Дебатный турнир</h1>
+                    <p class="lead text-muted">
+                        Мы приглашаем вас стать участниками Дебатного турнира, в ходе которого будут высказаны и
+                        услышаны
+                        самые
+                        разные точки зрения о будущем Московского отделения </p>
+                    <p>
+                        <a href="https://goo.gl/forms/6GYe0XJTv1FJId973"
+                           class="btn btn-primary btn-outline-primary my-2">Голосовать</a>
+                        <a href="/timetable" class="btn btn-secondary my-2">Расписание</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_QVGyv3CmMiCmyvTYTMreoqZJcEThLtJ_jPLXkCM-KP3BaQ/viewform"
+                           class="btn btn-secondary my-2">Вопрос участникам</a>
+                    </p>
                 </div>
                 <div class="col-md-6">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4eM6ufj6qxM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4eM6ufj6qxM" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -39,8 +44,8 @@
                                 @php
                                     $debater = $debaters[$day["debater{$i}"]]
                                 @endphp
-                                <div class="col-md-3">
-                                    <div class="card mb-3 box-shadow">
+                                <div class="col-md-3 ">
+                                    <div class="card mb-3 box-shadow @if($day->winner == $debater->id) alert-success @endif">
                                         @if($debater->photo)
                                             <a href="/debater/{{ $debater->id }}" class="photo-link">
                                                 <img class="list-photo"
@@ -49,10 +54,13 @@
                                             </a>
                                         @endif
                                         <div class="card-body">
-                                            <h4 class="card-title"><a
-                                                        href="/debater/{{ $debater->id }}">{{ $debater->last_name }}<br> {{ $debater->first_name }}<br> {{ $debater->middle_name }}</a>
+                                            <h4 class="card-title">
+                                                <a href="/debater/{{ $debater->id }}">
+                                                    {{ $debater->last_name }}<br>
+                                                    {{ $debater->first_name }}<br>
+                                                    {{ $debater->middle_name }}
+                                                </a>
                                             </h4>
-                                            {{--<p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>--}}
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
                                                     <a href="/debater/{{ $debater->id }}"
@@ -69,8 +77,8 @@
                 @endforeach
             @endif
             <div class="row py-5">
-            <h2>Все участники дебатов</h2>
-            <hr>
+                <h2>Все участники дебатов</h2>
+                <hr>
             </div>
             <div class="row">
                 @foreach($debaters as $debater)
@@ -84,7 +92,8 @@
                                 </a>
                             @endif
                             <div class="card-body">
-                                <h4 class="card-title"><a href="/debater/{{ $debater->id }}">{{ $debater->last_name }}<br>  {{ $debater->first_name }}<br>  {{ $debater->middle_name }}</a></h4>
+                                <h4 class="card-title"><a href="/debater/{{ $debater->id }}">{{ $debater->last_name }}
+                                        <br> {{ $debater->first_name }}<br> {{ $debater->middle_name }}</a></h4>
                                 {{--<p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>--}}
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
@@ -105,8 +114,8 @@
 
 @section("styles")
     {{--<style>--}}
-        {{--.jumbotron .container {--}}
-            {{--max-width: 40rem;--}}
-        {{--}--}}
+    {{--.jumbotron .container {--}}
+    {{--max-width: 40rem;--}}
+    {{--}--}}
     {{--</style>--}}
 @endsection
