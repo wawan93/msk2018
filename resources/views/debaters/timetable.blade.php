@@ -21,7 +21,7 @@
                 @endphp
                 <div class="row">
                     <div class="col-md-12 py-5">
-                        <h2>{{$date->day}} {{ $date->localeMonth }}, {{ $day->group == 1 ? "19:00" : "20:30" }}</h2>
+                        <h2>{{$date->day}} {{ $date->localeMonth }}, {{ $day->group == 1 ? "19:00" : $day->group == 2 ? "20:30" : "ФИНАЛ" }}</h2>
                     </div>
                 </div>
                 <div class="row">

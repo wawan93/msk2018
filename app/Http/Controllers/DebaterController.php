@@ -30,7 +30,7 @@ class DebaterController extends Controller
     public function timetable()
     {
         $debaters = Debater::orderBy("last_name")->get()->keyBy("id");
-        $days = Day::query()->get();
+        $days = Day::query()->orderBy("day", "ASC")->orderBy("group")->get();
 
         return view("debaters/timetable", compact('debaters', 'days'));
     }
