@@ -14,7 +14,7 @@
                         самые
                         разные точки зрения о будущем Московского отделения </p>
                     <p>
-                        <a href="https://goo.gl/forms/6GYe0XJTv1FJId973"
+                        <a href="https://voting.yabloko.ru"
                            class="btn btn-primary btn-outline-primary my-2">Голосовать</a>
                         <a href="/timetable" class="btn btn-secondary my-2">Расписание</a>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_QVGyv3CmMiCmyvTYTMreoqZJcEThLtJ_jPLXkCM-KP3BaQ/viewform"
