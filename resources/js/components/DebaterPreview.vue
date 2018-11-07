@@ -1,6 +1,6 @@
 <template>
     <div class="row debater-preview pl-2 my-3">
-        <div class="col-5 col-left p-0">
+        <div class="col-sm-5 col-12 col-left p-0">
             <div class="py-3 px-4">
                 <h5 class="preview-title">
                     {{ debater.last_name }}
@@ -12,7 +12,7 @@
             </div>
             <img :src="debater.photo_url" :alt="debater.full_name" class="img-fluid"/>
         </div>
-        <div class="col-7 col-right">
+        <div class="col-sm-7 col-12 col-right">
             <h6 class="my-3">О себе</h6>
             <p>{{ debater.about }}</p>
             <h6>Программа</h6>
