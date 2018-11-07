@@ -1,4 +1,4 @@
-@extends("debaters.layout")
+@extends("layout")
 
 @section('title', 'Дебатный турнир')
 

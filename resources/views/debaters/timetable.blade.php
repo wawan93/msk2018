@@ -1,16 +1,6 @@
-@extends("debaters.layout")
-
-@php
-    setlocale(LC_TIME, 'ru_RU.UTF-8');
-@endphp
+@extends("layout")
 
 @section('title', 'Дебатный турнир')
-
-@section("jumbotron")
-    <section class="jumbotron text-center">
-        <h1>Расписание дебатов</h1>
-    </section>
-@endsection
 
 @section("content")
     <div class="album py-5 bg-light">
@@ -59,12 +49,4 @@
             @endforeach
         </div>
     </div>
-@endsection
-
-@section("styles")
-    <style>
-        .jumbotron .container {
-            max-width: 40rem;
-        }
-    </style>
 @endsection

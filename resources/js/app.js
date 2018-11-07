@@ -1,8 +1,8 @@
+import Vue from 'vue';
 
-/**
- * First, we will load all of this project's Javascript utilities and other
- * dependencies. Then, we will be ready to develop a robust and powerful
- * application frontend using useful Laravel and JavaScript libraries.
- */
+import Grid from './components/Grid.vue';
+import DebaterPreview from './components/DebaterPreview.vue';
 
-require('./bootstrap');
+Vue.component('grid', Grid);
+Vue.component('debater-preview', DebaterPreview);
+new Vue({el: '#app'});
