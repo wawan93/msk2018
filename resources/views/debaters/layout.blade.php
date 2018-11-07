@@ -7,6 +7,10 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
+    <meta property="og:title" content="Дебатный турнир" />
+    <meta property="og:image" content="/safe_image.jpeg" />
+
+
     <title>@yield('title')</title>
 
     <!-- Custom styles for this template -->
