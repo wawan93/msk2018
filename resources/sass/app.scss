@@ -90,3 +90,33 @@ h3 {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+.timetable {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 5rem;
+
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  column-gap: 4rem;
+  row-gap: 2.5rem;
+
+  & div {
+    border-radius: 0.5rem;
+    font-size: 3.5rem;
+    text-align: center;
+    cursor: pointer;
+    color: $color-dark-red;
+
+    &.active,
+    &:hover {
+      background-color: $color-dark-red;
+      color: white;
+    }
+  }
+}

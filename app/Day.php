@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Day extends Model
 {
     public $timestamps = false;
+    protected $casts = [
+        'day' => 'date'
+    ];
 
     public function debater1() {
         return $this->hasOne(Debater::class, "id", "debater1");
