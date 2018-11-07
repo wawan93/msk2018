@@ -16,7 +16,7 @@
             <h6 class="my-3">О себе</h6>
             <p>{{ debater.about }}</p>
             <h6>Программа</h6>
-            <p>{{ debater.about }}</p>
+            <p>{{ debater.program }}</p>
         </div>
     </div>
 </template>
