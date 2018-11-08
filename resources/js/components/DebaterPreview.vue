@@ -1,6 +1,6 @@
 <template>
     <div class="row debater-preview pl-2 my-3">
-        <div class="col-sm-5 col-12 col-left p-0">
+        <div class="col-sm-5 d-none d-sm-block col-left p-0">
             <div class="py-3 px-4">
                 <h5 class="preview-title">
                     {{ debater.last_name }}

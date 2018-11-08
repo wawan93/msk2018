@@ -34,7 +34,7 @@
 </main>
 </div>
 
-<script src="/js/app.js"></script>
+<script src="/js/app.js?time={{ date('His') }}"></script>
 @yield("scripts")
 
 </body>
