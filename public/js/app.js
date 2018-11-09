@@ -11710,7 +11710,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['debaters'],
+    props: ['debaters', 'isFinal'],
     data: function data() {
         return {
             expanded: null,
@@ -11726,7 +11726,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         calculateCardsPerRow: function calculateCardsPerRow() {
             var width = document.body.clientWidth;
             if (width >= 768) {
-                this.cardsPerRow = 4;
+                this.cardsPerRow = this.isFinal ? 3 : 4;
             } else if (width > 576) {
                 this.cardsPerRow = 2;
             } else {

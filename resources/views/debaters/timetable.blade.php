@@ -14,26 +14,13 @@
 
             @foreach($groupedDays as $d => $group)
                 <div v-show="{{ $d }} == shownDate">
-                <h2 class="my-2">{{ $d }} ноября:</h2>
+                <h2 class="my-2">{{ $d }} ноября, {{ $group->first()->dayOfWeek }}</h2>
 
-                @foreach($group as $day)
-                    <h3 class="my-4 @if($day->isFinal()) final @endif">
-                        {{ $day->time }}
-                    </h3>
-
-                    <grid :debaters='{!! $day->debaters->toJson() !!}' inline-template>
-                        <div class="grid">
-                            @foreach($day->debaters as $i => $debater)
-                                @include('partials.debater-card', $debater)
-                            @endforeach
-                            <div class="debater-expanded" v-if="expandedDebater" :style="expandedStyle">
-                                <div class="container">
-                                    <debater-preview :debater="expandedDebater"></debater-preview>
-                                </div>
-                            </div>
-                        </div>
-                    </grid>
-                @endforeach
+                @if($group->first()->isVagueWeekFinal())
+                    @include('timetable.final', $group)
+                @else
+                    @include('timetable.regular', $group)
+                @endif
                 </div>
             @endforeach
         </div>

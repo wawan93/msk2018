@@ -2,7 +2,7 @@
     import * as _ from 'lodash';
 
     export default {
-        props: ['debaters'],
+        props: ['debaters', 'isFinal'],
         data() {
             return {
                 expanded: null,
@@ -17,7 +17,7 @@
             calculateCardsPerRow() {
                 let width = document.body.clientWidth;
                 if(width >= 768) {
-                    this.cardsPerRow = 4;
+                    this.cardsPerRow = this.isFinal ? 3 : 4;
                 } else if(width > 576) {
                     this.cardsPerRow = 2;
                 } else {

@@ -10,7 +10,7 @@
     <title>@yield('title')</title>
 
     <!-- Custom styles for this template -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/app.css?time={{ date('His') }}" rel="stylesheet">
     @yield("styles")
 </head>
 

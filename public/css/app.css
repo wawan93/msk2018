@@ -10594,6 +10594,10 @@ h3.final {
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .grid.final {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .timetable {
@@ -10607,13 +10611,13 @@ h3.final {
 
 @media (min-width: 576px) {
   .timetable {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
 @media (min-width: 768px) {
   .timetable {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
   }
 }
 

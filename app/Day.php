@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Day extends Model
@@ -27,6 +28,22 @@ class Day extends Model
     public function isFinal()
     {
         return strtolower($this->time) === 'финал';
+    }
+
+    public function isWeekFinal()
+    {
+        return intval($this->day->format('N')) === 7;
+    }
+
+    public function isVagueWeekFinal()
+    {
+        return $this->isWeekFinal() && $this->day->diff(new Carbon())->days > 0;
+    }
+
+    public function getDayOfWeekAttribute()
+    {
+        $days = [null, 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+        return $days[$this->day->format('N')];
     }
 
     public function getDebatersAttribute()
