@@ -5,7 +5,7 @@
         return $day->debaters;
     });
 ?>
-<grid :debaters='{!! \App\Debater::all()->toJson() !!}' :is-final="true" inline-template>
+<grid :debaters='{!! \App\Debater::all()->toJson() !!}' :is-final="true" unique="{{ $date->format('d') }}" inline-template>
     <div class="grid final">
         @foreach($debaters as $i => $debater)
             @include('partials.debater-card', $debater)
@@ -24,7 +24,7 @@
         @endif
         <div class="debater-expanded" v-if="expandedDebater" :style="expandedStyle">
             <div class="container">
-                <debater-preview :debater="expandedDebater"></debater-preview>
+                <debater-preview :debater="expandedDebater" unique="{{  $date->format('d')  }}"></debater-preview>
             </div>
         </div>
     </div>

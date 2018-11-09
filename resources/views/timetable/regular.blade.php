@@ -3,7 +3,7 @@
         {{ $day->isFinal() ? 'Финал дня' : $day->time }}
     </h3>
 
-    <grid :debaters='{!! $day->debaters->toJson() !!}' inline-template>
+    <grid :debaters='{!! $day->debaters->toJson() !!}' unique="{{ $day->id }}" inline-template>
         <div class="grid">
             @foreach($day->debaters as $i => $debater)
                 @include('partials.debater-card', $debater)
@@ -22,7 +22,7 @@
             @endif
             <div class="debater-expanded" v-if="expandedDebater" :style="expandedStyle">
                 <div class="container">
-                    <debater-preview :debater="expandedDebater"></debater-preview>
+                    <debater-preview :debater="expandedDebater" unique="{{ $day->id }}"></debater-preview>
                 </div>
             </div>
         </div>
