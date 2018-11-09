@@ -13,6 +13,7 @@
             <img :src="debater.photo_url" :alt="debater.full_name" class="img-fluid"/>
         </div>
         <div class="col-sm-7 col-12 col-right">
+            <a href="" id="details-about"></a>
             <h6 class="my-3">О себе</h6>
             <p>{{ debater.about }}</p>
             <h6>Программа</h6>

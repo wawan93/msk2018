@@ -10,7 +10,7 @@
 
                 @foreach($days as $day)
                     <h3 class="my-4 @if($day->isFinal()) final @endif">
-                        {{ $day->time }}
+                        {{ $day->isFinal() ? 'Финал дня' : $day->time }}
                     </h3>
 
                     <grid :debaters='{!! $debaters->toJson() !!}' inline-template>

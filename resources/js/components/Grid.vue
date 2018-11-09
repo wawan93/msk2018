@@ -1,5 +1,6 @@
 <script>
     import * as _ from 'lodash';
+    import VueScrollTo from 'vue-scrollto';
 
     export default {
         props: ['debaters', 'isFinal'],
@@ -30,6 +31,9 @@
                 } else {
                     this.expanded = id;
                     this.index = index;
+                    this.$nextTick(() => {
+                        VueScrollTo.scrollTo(document.getElementById('details-about'))
+                    })
                 }
             }
         },

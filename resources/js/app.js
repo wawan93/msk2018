@@ -1,4 +1,7 @@
 import Vue from 'vue';
+import VueScrollTo from 'vue-scrollto';
+
+Vue.use(VueScrollTo);
 
 import Grid from './components/Grid.vue';
 import TimeTable from './components/TimeTable.vue';
