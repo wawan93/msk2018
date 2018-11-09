@@ -3,7 +3,7 @@
     import VueScrollTo from 'vue-scrollto';
 
     export default {
-        props: ['debaters', 'isFinal'],
+        props: ['debaters', 'isFinal', 'unique'],
         data() {
             return {
                 expanded: null,
@@ -32,7 +32,7 @@
                     this.expanded = id;
                     this.index = index;
                     this.$nextTick(() => {
-                        VueScrollTo.scrollTo(document.getElementById('details-about'))
+                        VueScrollTo.scrollTo(document.getElementById('details-about' + this.unique))
                     })
                 }
             }

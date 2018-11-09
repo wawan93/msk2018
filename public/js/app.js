@@ -11718,7 +11718,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['debaters', 'isFinal'],
+    props: ['debaters', 'isFinal', 'unique'],
     data: function data() {
         return {
             expanded: null,
@@ -11742,13 +11742,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         toggle: function toggle(id, index) {
+            var _this = this;
+
             if (this.expanded === id) {
                 this.expanded = null;
             } else {
                 this.expanded = id;
                 this.index = index;
                 this.$nextTick(function () {
-                    __WEBPACK_IMPORTED_MODULE_1_vue_scrollto___default.a.scrollTo(document.getElementById('details-about'));
+                    __WEBPACK_IMPORTED_MODULE_1_vue_scrollto___default.a.scrollTo(document.getElementById('details-about' + _this.unique));
                 });
             }
         }
@@ -11760,10 +11762,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return 'grid-column: 1/' + column + '; grid-row: ' + row;
         },
         expandedDebater: function expandedDebater() {
-            var _this = this;
+            var _this2 = this;
 
             return __WEBPACK_IMPORTED_MODULE_0_lodash__["find"](this.debaters, function (debater) {
-                return debater.id === _this.expanded;
+                return debater.id === _this2.expanded;
             });
         }
     }
@@ -29062,7 +29064,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['debater']
+    props: ['debater', 'unique']
 });
 
 /***/ }),
@@ -29099,7 +29101,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-sm-7 col-12 col-right" }, [
-      _c("a", { attrs: { href: "", id: "details-about" } }),
+      _c("a", { attrs: { href: "", id: "details-about" + _vm.unique } }),
       _vm._v(" "),
       _c("h6", { staticClass: "my-3" }, [_vm._v("О себе")]),
       _vm._v(" "),
