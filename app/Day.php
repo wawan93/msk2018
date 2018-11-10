@@ -37,7 +37,15 @@ class Day extends Model
 
     public function isVagueWeekFinal()
     {
-        return $this->isWeekFinal() && $this->day->diff(new Carbon())->days > 0;
+        if (!$this->isWeekFinal()) {
+            return false;
+        }
+
+        $knownFinalistsCount = Day::where('day', $this->day)->get()->flatMap(function ($day) {
+            return $day->debaters;
+        })->count();
+
+        return $knownFinalistsCount < 6;
     }
 
     public function getDayOfWeekAttribute()
