@@ -1,8 +1,13 @@
+import Vue from 'vue';
+import VueScrollTo from 'vue-scrollto';
 
-/**
- * First, we will load all of this project's Javascript utilities and other
- * dependencies. Then, we will be ready to develop a robust and powerful
- * application frontend using useful Laravel and JavaScript libraries.
- */
+Vue.use(VueScrollTo);
 
-require('./bootstrap');
+import Grid from './components/Grid.vue';
+import TimeTable from './components/TimeTable.vue';
+import DebaterPreview from './components/DebaterPreview.vue';
+
+Vue.component('grid', Grid);
+Vue.component('timetable', TimeTable);
+Vue.component('debater-preview', DebaterPreview);
+new Vue({el: '#app'});

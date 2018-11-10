@@ -1,121 +1,61 @@
-@extends("debaters.layout")
+@extends("layout")
 
 @section('title', 'Дебатный турнир')
 
-@section("jumbotron")
-    <section class="jumbotron">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1 class="jumbotron-heading">Дебатный турнир</h1>
-                    <p class="lead text-muted">
-                        Мы приглашаем вас стать участниками Дебатного турнира, в ходе которого будут высказаны и
-                        услышаны
-                        самые
-                        разные точки зрения о будущем Московского отделения </p>
-                    <p>
-                        <a href="https://voting.yabloko.ru"
-                           class="btn btn-primary btn-outline-primary my-2">Голосовать</a>
-                        <a href="/timetable" class="btn btn-secondary my-2">Расписание</a>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_QVGyv3CmMiCmyvTYTMreoqZJcEThLtJ_jPLXkCM-KP3BaQ/viewform"
-                           class="btn btn-secondary my-2">Вопрос участникам</a>
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/oAkSviLWq6Y" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-@endsection
-
 @section("content")
-    <div class="album py-5 bg-light">
-        <div class="container">
+    <div class="content">
+        <div class="container py-4">
             @if($days->isNotEmpty())
-                <h2>Сегодня дебатируют</h2>
-                <hr>
+                <h2 class="my-2">Дебатируют сегодня</h2>
+
                 @foreach($days as $day)
-                    <div class="row">
-                        @for($i = 1; $i <= 4; $i++)
-                            @if($day["debater{$i}"] != null)
-                                @php
-                                    $debater = $debaters[$day["debater{$i}"]]
-                                @endphp
-                                <div class="col-md-3 ">
-                                    <div class="card mb-3 box-shadow @if($day->winner == $debater->id) alert-success @endif">
-                                        @if($debater->photo)
-                                            <a href="/debater/{{ $debater->id }}" class="photo-link">
-                                                <img class="list-photo"
-                                                     src="{{ \Storage::url($debater->photo) }}"
-                                                     alt="{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}">
-                                            </a>
-                                        @endif
+                    <h3 class="my-4 @if($day->isFinal()) final @endif">
+                        {{ $day->isFinal() ? 'Финал дня' : $day->time }}
+                    </h3>
+
+                    <grid :debaters='{!! $debaters->toJson() !!}' unique="{{ $day->id }}" inline-template>
+                        <div class="grid">
+                            @foreach($day->debaters as $i => $debater)
+                                @include('partials.debater-card', $debater)
+                            @endforeach
+                            @if($day->isFinal() && $day->debaters->count() < 2)
+                                @for($i = $day->debaters->count(); $i < 2; $i++)
+                                    <div class="card m-2">
+                                        <img class="card-img-top" src="/img/quest.png">
                                         <div class="card-body">
-                                            <h4 class="card-title">
-                                                <a href="/debater/{{ $debater->id }}">
-                                                    {{ $debater->last_name }}<br>
-                                                    {{ $debater->first_name }}<br>
-                                                    {{ $debater->middle_name }}
-                                                </a>
-                                            </h4>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="btn-group">
-                                                    <a href="/debater/{{ $debater->id }}"
-                                                       class="btn btn-sm btn-primary btn-outline-secondary">Подробнее</a>
-                                                </div>
-                                            </div>
+                                            <h5 class="card-title">
+                                                Будет определен {{ $day->day->format('j') }} Ноября
+                                            </h5>
                                         </div>
                                     </div>
-                                </div>
-
+                                @endfor
                             @endif
-                        @endfor
-                    </div>
-                @endforeach
-            @endif
-            <div class="row py-5">
-                <h2>Все участники дебатов</h2>
-                <hr>
-            </div>
-            <div class="row">
-                @foreach($debaters as $debater)
-                    <div class="col-md-3">
-                        <div class="card mb-3 box-shadow">
-                            @if($debater->photo)
-                                <a href="/debater/{{ $debater->id }}" class="photo-link">
-                                    <img class="list-photo"
-                                         src="{{ \Storage::url($debater->photo) }}"
-                                         alt="{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}">
-                                </a>
-                            @endif
-                            <div class="card-body">
-                                <h4 class="card-title"><a href="/debater/{{ $debater->id }}">{{ $debater->last_name }}
-                                        <br> {{ $debater->first_name }}<br> {{ $debater->middle_name }}</a></h4>
-                                {{--<p class="card-text">{{ substr($debater->about, 0, 200) }}...</p>--}}
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="/debater/{{ $debater->id }}"
-                                           class="btn btn-sm btn-primary btn-outline-secondary">Подробнее</a>
-                                    </div>
+                            <div class="debater-expanded" v-if="expandedDebater" :style="expandedStyle">
+                                <div class="container">
+                                    <debater-preview unique="{{ $day->id }}" :debater="expandedDebater"></debater-preview>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    </grid>
                 @endforeach
+            @endif
+        </div>
+        <hr class="my-3" />
 
-            </div>
+        <div class="container">
+            <h2 class="mt-5 mb-4">Все участники:</h2>
+            <grid :debaters='{!! $debaters->toJson() !!}' inline-template>
+                <div class="grid">
+                    @foreach($debaters as $i => $debater)
+                        @include('partials.debater-card', $debater)
+                    @endforeach
+                    <div class="debater-expanded" v-if="expandedDebater" :style="expandedStyle">
+                        <div class="container">
+                            <debater-preview :debater="expandedDebater"></debater-preview>
+                        </div>
+                    </div>
+                </div>
+            </grid>
         </div>
     </div>
-@endsection
-
-@section("styles")
-    {{--<style>--}}
-    {{--.jumbotron .container {--}}
-    {{--max-width: 40rem;--}}
-    {{--}--}}
-    {{--</style>--}}
 @endsection

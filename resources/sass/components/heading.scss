@@ -1,0 +1,22 @@
+.jumbotron {
+  background-image: url('/img/bg_white.png');
+  background-size: cover;
+  margin-bottom: 0;
+}
+.jumbotron-heading {
+  color: $color-dark-red
+}
+.lead {
+  font-size: 1.8rem;
+}
+.video {
+  height: 400px;
+}
+.navigation {
+  background: $color-dark-red;
+}
+.navigation a {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}

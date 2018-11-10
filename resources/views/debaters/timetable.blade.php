@@ -1,70 +1,29 @@
-@extends("debaters.layout")
-
-@php
-    setlocale(LC_TIME, 'ru_RU.UTF-8');
-@endphp
+@extends("layout")
 
 @section('title', 'Дебатный турнир')
 
-@section("jumbotron")
-    <section class="jumbotron text-center">
-        <h1>Расписание дебатов</h1>
-    </section>
-@endsection
-
 @section("content")
-    <div class="album py-5 bg-light">
-        <div class="container">
-            @foreach($days as $day)
-                @php
-                    $date = \Carbon\Carbon::parse($day->day)
-                @endphp
-                <div class="row">
-                    <div class="col-md-12 py-5">
-                        <h2>{{$date->day}} {{ $date->localeMonth }}, {{ $day->group == 1 ? "19:00" : ($day->group == 2 ? "20:30" : "ФИНАЛ") }}</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    @for($i = 1; $i <= 4; $i++)
-                        @if($day["debater{$i}"] != null)
-                            @php
-                                $debater = $debaters[$day["debater{$i}"]]
-                            @endphp
-                            <div class="col-md-3">
-                                <div class="card mb-3 box-shadow @if($day->winner == $debater->id) alert-success @endif">
-                                    @if($debater->photo)
-                                        <a href="/debater/{{ $debater->id }}" class="photo-link">
-                                            <img class="list-photo"
-                                                 src="{{ \Storage::url($debater->photo) }}"
-                                                 alt="{{ $debater->last_name }} {{ $debater->first_name }} {{ $debater->middle_name }}">
-                                        </a>
-                                    @endif
-                                    <div class="card-body">
-                                        <h4 class="card-title"><a
-                                                    href="/debater/{{ $debater->id }}">{{ $debater->last_name }}<br> {{ $debater->first_name }}<br> {{ $debater->middle_name }}</a>
-                                        </h4>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <a href="/debater/{{ $debater->id }}"
-                                                   class="btn btn-sm btn-primary btn-outline-secondary">Подробнее</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+    <timetable inline-template>
+    <div class="content">
+        <div class="container py-4">
+            <div class="timetable mt-5">
+            @foreach($groupedDays as $d => $group)
+                <div @click.prevent="showDate({{ $d }})" :class="{active: {{ $d }} == shownDate}">{{ $d }}</div>
+            @endforeach
+            </div>
 
-                        @endif
-                    @endfor
+            @foreach($groupedDays as $d => $group)
+                <div v-show="{{ $d }} == shownDate">
+                <h2 class="my-2">{{ $d }} ноября, {{ $group->first()->dayOfWeek }}</h2>
+
+                @if($group->first()->isVagueWeekFinal())
+                    @include('timetable.final', $group)
+                @else
+                    @include('timetable.regular', $group)
+                @endif
                 </div>
             @endforeach
         </div>
     </div>
-@endsection
-
-@section("styles")
-    <style>
-        .jumbotron .container {
-            max-width: 40rem;
-        }
-    </style>
+    </timetable>
 @endsection
