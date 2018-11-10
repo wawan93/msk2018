@@ -2,7 +2,8 @@
     export default {
         data() {
             return {
-                shownDate: 5
+                shownDate: new Date().getDate(),
+                today: new Date().getDate()
             }
         },
         methods: {

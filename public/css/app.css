@@ -10563,6 +10563,7 @@ h3.final {
 .debater-preview .col-left {
   background-image: url("/img/bg_pink.png");
   background-size: cover;
+  background-position: bottom;
 }
 
 .debater-preview .col-right {
