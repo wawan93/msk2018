@@ -10554,6 +10554,10 @@ h3.final {
   font-weight: bold;
 }
 
+h5 {
+  font-size: 1.18rem;
+}
+
 .debater-preview .preview-title {
   font-size: 2rem;
   color: white;
