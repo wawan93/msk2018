@@ -82,6 +82,21 @@ h5 {
     margin-left: 0.7rem;
   }
 }
+
+.debater {
+  & .result {
+    font-size: 2em;
+    color: $color-dark-red;
+    background-color: #FFF1F5;
+  }
+  &.winner {
+    background: #f5c6cb;
+  }
+  &.winner .result {
+    font-weight: bold;
+  }
+}
+
 .grid {
   display: grid;
 

@@ -1,4 +1,7 @@
-<div class="card m-2">
+<div class="debater card m-2 @if($day->winner == $debater->id) winner @endif">
+    @if($day['result' . ($i + 1)])
+        <div class="result">{{ $day['result' . ($i + 1)] }}%</div>
+    @endif
     <img class="card-img-top" src="{{ $debater->photo_url }}" alt="{{ $debater->full_name }}">
     <div class="card-body">
         <h5 class="card-title">

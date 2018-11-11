@@ -58,4 +58,9 @@ class Day extends Model
     {
         return collect([$this->debater1()->first(), $this->debater2()->first(), $this->debater3()->first(), $this->debater4()->first()])->filter();
     }
+
+    public function getResultsAttribute()
+    {
+        return collect([$this->result1, $this->result2, $this->result3, $this->result4])->filter();
+    }
 }

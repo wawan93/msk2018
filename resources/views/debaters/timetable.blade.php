@@ -16,11 +16,7 @@
                 <div v-show="{{ $d }} == shownDate">
                 <h2 class="my-2">{{ $d }} ноября, {{ $group->first()->dayOfWeek }}</h2>
 
-                @if($group->first()->isVagueWeekFinal())
-                    @include('timetable.final', $group)
-                @else
-                    @include('timetable.regular', $group)
-                @endif
+                @include('timetable.regular', $group)
                 </div>
             @endforeach
         </div>
