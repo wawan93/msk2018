@@ -46,6 +46,7 @@
             <h2 class="mt-5 mb-4">Все участники:</h2>
             <grid :debaters='{!! $debaters->toJson() !!}' inline-template>
                 <div class="grid">
+                    @php $day = null; @endphp
                     @foreach($debaters as $i => $debater)
                         @include('partials.debater-card', $debater)
                     @endforeach

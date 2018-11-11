@@ -13,6 +13,7 @@
 
 Route::get('/', "DebaterController@index");
 Route::get('/timetable', "DebaterController@timetable");
+Route::get('/debater/{debater}', "DebaterController@show");
 
 Route::get("/info/organizators", function () {
     return view("info/organizators");

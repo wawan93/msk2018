@@ -38,6 +38,19 @@
 </main>
 </div>
 
+<footer class="footer navigation">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">наверх</a>
+        </p>
+        <p>
+            © 2018 |
+            <a href="/info/organizators">Оргкомитет дебатов</a> |
+            <a href="/info/reglament">Регламент</a>
+        </p>
+    </div>
+</footer>
+
 <script src="/js/app.js?time={{ date('His') }}"></script>
 @yield("scripts")
 

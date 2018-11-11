@@ -26,4 +26,9 @@ class DebaterController extends Controller
 
         return view("debaters/timetable", compact('debaters', 'groupedDays'));
     }
+
+    public function show(Debater $debater)
+    {
+        return view("debaters.show", compact("debater"));
+    }
 }

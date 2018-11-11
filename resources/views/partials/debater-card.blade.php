@@ -1,5 +1,5 @@
-<div class="debater card m-2 @if($day->winner == $debater->id) winner @endif">
-    @if($day['result' . ($i + 1)])
+<div class="debater card m-2 @if(isset($day) && ($day->winner == $debater->id)) winner @endif">
+    @if(isset($day) && $day['result' . ($i + 1)])
         <div class="result">{{ $day['result' . ($i + 1)] }}%</div>
     @endif
     <img class="card-img-top" src="{{ $debater->photo_url }}" alt="{{ $debater->full_name }}">
