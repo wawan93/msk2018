@@ -61,7 +61,7 @@
         <p>
             © 2018 |
             <a href="/info/organizators">Оргкомитет дебатов</a> |
-            <a href="/info/reglament">Регламент</a>
+            <a href="https://drive.google.com/file/d/1JxuDW-KwRufUXsIQ8WFrHgxHgbYsCGfL/view?usp=sharing">Регламент</a>
         </p>
     </div>
 </footer>
