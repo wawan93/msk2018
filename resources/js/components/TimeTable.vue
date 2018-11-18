@@ -2,8 +2,8 @@
     export default {
         data() {
             return {
-                shownDate: "18",
-                today: "18"
+                shownDate: "СУПЕРФИНАЛ",
+                today: "СУПЕРФИНАЛ"
             }
         },
         methods: {
