@@ -23,7 +23,7 @@ class DebaterController extends Controller
         $groupedDays = Day::query()->orderBy("day", "ASC")->orderBy("group")->get()->groupBy(function ($el) {
             $day = $el->day->format('j');
             if ($day == "19" && $el->group === "4") {
-                $day = "CУПЕРФИНАЛ";
+                $day = "СУПЕРФИНАЛ";
             }
             return $day;
         });

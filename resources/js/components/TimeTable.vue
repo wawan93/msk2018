@@ -2,8 +2,8 @@
     export default {
         data() {
             return {
-                shownDate: "СУПЕРФИНАЛ",
-                today: "СУПЕРФИНАЛ"
+                shownDate: "18",
+                today: "18"
             }
         },
         methods: {
@@ -11,7 +11,7 @@
                 this.shownDate = date;
             },
             style(date) {
-                return date == this.showDate ? '' : 'display:none'
+                return date == this.shownDate ? '' : 'display:none'
             }
         }
     }

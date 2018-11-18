@@ -10,14 +10,14 @@
             @foreach($groupedDays as $d => $group)
                 <div
                         @click.prevent="showDate('{{ $d }}')"
-                        class="{{ ("CУПЕРФИНАЛ" === $d) ? "final" : "" }}"
+                        class="{{ ("СУПЕРФИНАЛ" === $d) ? "final" : "" }}"
                         :class="{active: '{{ $d }}' == shownDate}">{{ $d }}</div>
             @endforeach
             </div>
 
             @foreach($groupedDays as $d => $group)
                 <div v-show="'{{ $d }}' == shownDate">
-                @if($d !== "CУПЕРФИНАЛ")
+                @if($d !== "СУПЕРФИНАЛ")
                 <h2 class="my-2">{{ $d }} ноября, {{ $group->first()->dayOfWeek }}</h2>
                 @endif
 
