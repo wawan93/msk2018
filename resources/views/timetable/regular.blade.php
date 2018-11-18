@@ -1,7 +1,13 @@
 @foreach($group as $day)
+    @if($day->group != 4 )
     <h3 class="my-4 @if($day->isFinal()) final @endif">
         {{ $day->isFinal() ? 'Финал дня' : $day->time }}
     </h3>
+    @else
+    <h3 class="my-4 final">
+        СУПЕРФИНАЛ
+    </h3>
+    @endif
 
     <grid :debaters='{!! $day->debaters->toJson() !!}' unique="{{ $day->id }}" inline-template>
         <div class="grid">
@@ -14,7 +20,7 @@
                         <img class="card-img-top" src="/img/quest.png">
                         <div class="card-body">
                             <h5 class="card-title">
-                                Будет определен {{ $day->day->format('j') }} Ноября
+                                Будет определен {{ $day->id == 44 ? "18" : $day->day->format('j') }} Ноября
                             </h5>
                         </div>
                     </div>

@@ -27,7 +27,7 @@ class Day extends Model
 
     public function isFinal()
     {
-        return $this->group == 3;
+        return $this->group == 3 || $this->group == 4;
     }
 
     public function isWeekFinal()

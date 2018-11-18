@@ -9,9 +9,15 @@
                 <h2 class="my-2">Дебатируют сегодня</h2>
 
                 @foreach($days as $day)
-                    <h3 class="my-4 @if($day->isFinal()) final @endif">
-                        {{ $day->isFinal() ? 'Финал дня' : $day->time }}
-                    </h3>
+                    @if($day->group != 4 )
+                        <h3 class="my-4 @if($day->isFinal()) final @endif">
+                            {{ $day->isFinal() ? 'Финал дня' : $day->time }}
+                        </h3>
+                    @else
+                        <h3 class="my-4 final">
+                            СУПЕРФИНАЛ
+                        </h3>
+                    @endif
 
                     <grid :debaters='{!! $debaters->toJson() !!}' unique="{{ $day->id }}" inline-template>
                         <div class="grid">

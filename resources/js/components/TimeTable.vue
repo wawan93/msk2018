@@ -11,7 +11,7 @@
                 this.shownDate = date;
             },
             style(date) {
-                return +date === +this.showDate ? '' : 'display:none'
+                return date == this.showDate ? '' : 'display:none'
             }
         }
     }

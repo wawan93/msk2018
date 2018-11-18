@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Day;
 use App\Debater;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
+use App\Settings;
 
 class DebaterController extends Controller
 {
     public function index()
     {
         $debaters = Debater::orderBy("last_name")->get();
-        $days = Day::where("day", Carbon::now()->format("Y-m-d"))->get();
+        $format = Settings::where(["key"=>"today"])->first();
+        $days = Day::where("day", $format->value)->get();
 
         return view("debaters/list", compact('debaters', 'days'));
     }
@@ -21,7 +21,11 @@ class DebaterController extends Controller
     {
         $debaters = Debater::orderBy("last_name")->get()->keyBy("id");
         $groupedDays = Day::query()->orderBy("day", "ASC")->orderBy("group")->get()->groupBy(function ($el) {
-            return $el->day->format('j');
+            $day = $el->day->format('j');
+            if ($day == "19" && $el->group === "4") {
+                $day = "CУПЕРФИНАЛ";
+            }
+            return $day;
         });
 
         return view("debaters/timetable", compact('debaters', 'groupedDays'));
