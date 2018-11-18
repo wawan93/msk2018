@@ -2,8 +2,8 @@
     export default {
         data() {
             return {
-                shownDate: new Date().getDate(),
-                today: new Date().getDate()
+                shownDate: "СУПЕРФИНАЛ",
+                today: "СУПЕРФИНАЛ"
             }
         },
         methods: {
