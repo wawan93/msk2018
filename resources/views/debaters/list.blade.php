@@ -4,7 +4,7 @@
 
 @section("content")
     <div class="content">
-        <div class="container">
+        <div class="container py-4">
             <h2 class="mt-5 mb-4">Все участники:</h2>
             <grid :debaters='{!! $debaters->toJson() !!}' inline-template>
                 <div class="grid">
