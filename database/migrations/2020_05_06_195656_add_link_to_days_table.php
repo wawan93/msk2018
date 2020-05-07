@@ -26,7 +26,7 @@ class AddLinkToDaysTable extends Migration
     public function down()
     {
         Schema::table('days', function (Blueprint $table) {
-            $table->string("video_link")->nullable();
+            $table->dropColumn("video_link");
         });
     }
 }
