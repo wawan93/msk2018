@@ -33,4 +33,7 @@
             </div>
         </div>
     </grid>
+    <div class="container">
+        <a class="card-title" href="{{$day->video_link}}" target="_blank">Смотреть запись дебатов</a>
+    </div>
 @endforeach

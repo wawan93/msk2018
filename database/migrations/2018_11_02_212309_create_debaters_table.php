@@ -21,6 +21,7 @@ class CreateDebatersTable extends Migration
             $table->string("photo");
             $table->text("about");
             $table->text("program");
+
             $table->timestamps();
         });
     }

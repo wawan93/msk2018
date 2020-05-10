@@ -18,3 +18,4 @@ Route::get('/debater/{debater}', "DebaterController@show");
 Route::get("/info/organizators", function () {
     return view("info/organizators");
 });
+
